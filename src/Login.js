@@ -1,26 +1,35 @@
 import React, { useState } from 'react';
-import { auth } from './firebase';
+import { auth, signInWithEmailAndPassword } from './firebase';
+import { useHistory } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ setUser }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState('');
+    const history = useHistory();
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         try {
-            await auth.signInWithEmailAndPassword(email, password);
-            console.log("Login Successful")
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            setUser(userCredential.user);
+            setMessage('Logged in successfully as ' + userCredential.user.email);
+            history.push('/');
         } catch (error) {
-            console.error("Error in login: ", error);
+            setMessage('Error in login: ' + error.message);
         }
-    };
+    }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} required />
-            <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} required />
-            <button type="submit">Login</button>
-        </form>
+        <div>
+            <h1>Login</h1>
+            <form onSubmit={handleSubmit}>
+                <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email}/>
+                <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password}/>
+                <button type="submit">Login</button>
+            </form>
+            {message && <h3>{message}</h3>}
+        </div>
     );
 };
 
