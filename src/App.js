@@ -5,6 +5,9 @@ import Navbar from './NavBar';
 import HomePage from './HomePage';
 import Login from './Login';
 import Signup from './Signup';
+import CharityDashboard from './charitydashboard';
+import Profile from './profile';
+import CharityDetail from './charitydetail';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -32,6 +35,15 @@ function App() {
             </Route>
             <Route path="/signup">
               <Signup />
+            </Route>
+            <Route path="/charitydashboard">
+              <CharityDashboard />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/charitydetail">
+              <CharityDetail />
             </Route>
           </Switch>
         </div>
