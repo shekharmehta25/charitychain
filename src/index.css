@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Base Styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff0f5; /* Light Pink Background */
+}
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  border-bottom: 3px solid #f2f2f2;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar h1 {
+  color: #f1356d;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar .links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+  color: white;
+  background-color: #f1356d;
+  transform: translateY(-2px);
+}
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  /*background-color: #ffffff;*/
+  /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);*/
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+form input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+  border-color: #f1356d;
+  box-shadow: 0 0 5px #f1356d60;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background-color: #f1356d;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover, .navbar button:hover {
+  background-color: #f1356d80;
+  transform: translateY(-2px);
+}
+
+.navbar button {
+  background-color: #f1356d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+
+.home .slick-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; 
+}
+
+/* Adjusting the carousel's container to fit the content
+.home .slick-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 40px; /* or whatever size you want */
+  height: auto;
+  margin-right: 10px; /* add some space between logo and the title */
+}

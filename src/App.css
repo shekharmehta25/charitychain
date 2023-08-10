@@ -1,0 +1,106 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #faf3f3; /* Light pink background */
+  overflow-x: hidden;
+}
+
+.App {
+  text-align: center;
+  overflow: hidden;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  filter: drop-shadow(3px 3px 5px #b4a1a1); /* subtle shadow to give depth */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear, App-logo-pulse 1.5s infinite;
+  }
+}
+
+.App-header {
+  /* background-color: #f2d7d5; /* Updated to a light pink tone */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #6c5b7b; /* Adjusted for the new theme color */
+  border-top: 5px solid #c06c84;
+  border-bottom: 5px solid #c06c84;
+  box-shadow: 0px 0px 15px rgba(192, 108, 132, 0.2); /* subtle shadow */
+}
+
+.App-link {
+  color: #c06c84; /* Updated to a complementing pink shade */
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 2px solid #c06c84;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: all 0.3s;
+}
+
+.App-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  transform: skewX(45deg);
+  transition: all 0.5s;
+}
+
+.App-link:hover {
+  color: white;
+  background-color: #c06c84;
+  transform: translateY(-3px); /* subtle lift on hover */
+}
+
+.App-link:hover::before {
+  left: 150%;
+}
+
+/* Animations */
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes App-logo-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
